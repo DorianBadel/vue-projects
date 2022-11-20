@@ -10,7 +10,13 @@
     <div class="task-list">
       <div v-for="task in taskStore.tasks">
         <TaskDetails :task="task"/>      
+      </div>
     </div>
+
+    <div class="task-list">
+      <div v-for="task in taskStore.favs">
+        <TaskDetails :task="task"/>      
+      </div>
     </div>
 
   </main>
