@@ -17,6 +17,8 @@
 
     </nav>
 
+    <div class="loading" v-if="taskStore.loading">Loading tasks...</div>
+
     <div class="task-list" v-if="filter === 'all'">
       <p>You have {{taskStore.totalCount}} tasks left to do</p>
       <div v-for="task in taskStore.tasks">
@@ -44,6 +46,8 @@ import { useTaskStore } from './stores/TaskStore'
 
     setup(){
       const taskStore = useTaskStore()
+
+      taskStore.getTasks()
       const filter = ref('all');
 
       return {taskStore, filter}

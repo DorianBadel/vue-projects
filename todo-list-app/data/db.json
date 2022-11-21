@@ -1,0 +1,19 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Play gloomhaven",
+      "isFav": false
+    },
+    {
+      "id": 2,
+      "title": "Play the guitar",
+      "isFav": false
+    },
+    {
+      "title": "test",
+      "isFav": false,
+      "id": 68
+    }
+  ]
+}
