@@ -5,9 +5,23 @@ const app = Vue.createApp({
   data() {
     return {
       showBooks: true,
-      title: 'American gods',
-      author: 'Neil Geiman',
-      age: '50',
+      books: [
+        {
+          title: 'American gods',
+          author: 'Neil Geiman',
+          age: '50'
+        },
+        {
+          title: 'Red rising',
+          author: 'Pierce Brown',
+          age: '30'
+        },
+        {
+          title: 'The Last Wish',
+          author: 'Andrzej Sapkowski',
+          age: '40'
+        }
+      ],      
       x: 0,
       y: 0,
     }

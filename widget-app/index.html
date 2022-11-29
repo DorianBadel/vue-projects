@@ -22,9 +22,12 @@
 
   <div id="app">
     <div v-if="showBooks">
-      <p> {{ title }} - {{ age }}</p>
-
-      <button v-on:click="changeTitle('Good Omen')">Increase age</button>  
+       <ul>
+        <li v-for="book in books">
+          <h3>{{book.title}}</h3>
+          <p>{{book.author}}</p>
+        </li>
+       </ul>
     </div>
     <button @click="toggleBooks">
       <span v-if="showBooks">Hide books</span>
