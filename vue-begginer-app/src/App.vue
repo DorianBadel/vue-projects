@@ -2,7 +2,10 @@
   <h1>{{title}}</h1>
   <button @click.shift="toggleModal">Open modal [shift+click]</button>
   <div v-if="showModal">
-    <Modal :header="header" :text="text" :theme="theme" @closeModal="toggleModal"/>    
+    <Modal :theme="theme" @closeModal="toggleModal">
+      <h1>Simple modal</h1>
+      <p>Modal content</p>
+    </Modal>
   </div>
 </template>
 
@@ -16,8 +19,6 @@ export default {
   data(){
     return{
       title: 'A new Vue App',
-      header: 'Simple modal',
-      text: 'Modal content',
       theme: 'sale',
       showModal: false,
     };
