@@ -1,8 +1,9 @@
 <template>
   <h1>{{title}}</h1>
-  <input type="text" ref="name"/>
-  <button @click="handleClick">Click me</button>
-  <Modal/>
+  <button @click.shift="toggleModal">Open modal [shift+click]</button>
+  <div v-if="showModal">
+    <Modal :header="header" :text="text" :theme="theme" @closeModal="toggleModal"/>    
+  </div>
 </template>
 
 <script>
@@ -15,11 +16,15 @@ export default {
   data(){
     return{
       title: 'A new Vue App',
+      header: 'Simple modal',
+      text: 'Modal content',
+      theme: 'sale',
+      showModal: false,
     };
   },
   methods: {
-    handleClick(){
-      this.$refs.name.focus();
+    toggleModal(){
+      this.showModal = !this.showModal;
     }
   }
 };
@@ -38,5 +43,9 @@ h1{
   border-bottom: 1px solid #ddd;
   display:inline-block;
   padding-bottom: 10px;
+}
+button {
+  margin: auto;
+  display: block;
 }
 </style>
