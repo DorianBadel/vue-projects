@@ -4,22 +4,29 @@ const app = Vue.createApp({
 
   data() {
     return {
+      url:"https://www.thenetninja.co.uk",
       showBooks: true,
       books: [
         {
           title: 'American gods',
           author: 'Neil Geiman',
-          age: '50'
+          age: '50',
+          img: "assets/american-gods.webp",
+          isFav: true
         },
         {
           title: 'Red rising',
           author: 'Pierce Brown',
-          age: '30'
+          age: '30',
+          img: "assets/red_rising.webp",
+          isFav: false
         },
         {
           title: 'The Last Wish',
           author: 'Andrzej Sapkowski',
-          age: '40'
+          age: '40',
+          img: "assets/the_last_wish.webp",
+          isFav: true
         }
       ],      
       x: 0,
@@ -43,6 +50,14 @@ const app = Vue.createApp({
       this.x = e.offsetX;
       this.y = e.offsetY;
 
+    },
+    toggleFav(book){
+      book.isFav = !book.isFav;
+    }
+  },
+  computed: {
+    filteredBooks(){
+      return this.books.filter((book) => book.isFav)
     }
   }
 })
